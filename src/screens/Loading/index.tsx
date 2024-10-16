@@ -54,7 +54,8 @@ export default function LoadingScreen() {
       }
       await dispatch(getReviewStatus());
       await dispatch(fetchCities({url: config.apiUrl})).unwrap();
-      const url = await dispatch(getRemoteConfig()).unwrap();
+      // const url = await dispatch(getRemoteConfig()).unwrap();
+      const url = 'stage.akvilon.kz';
       dispatch(setUrl(url));
       await dispatch(getReviewStatus()).unwrap();
       await setCookie(url, {name: 'isMobile', value: '1'});
